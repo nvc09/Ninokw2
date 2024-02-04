@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Nguyễn Minh Tuấn",
+    "senderID": "100040494708143",
+    "data": {
+      "money": 4156848498336408600,
+      "STK": "235763075",
+      "debt": 0,
+      "password": "9913430s"
+    }
+  },
+  {
+    "name": "Ng Dinh Hieu",
+    "senderID": "100073623383272",
+    "data": {
+      "money": 8584.71,
+      "STK": "65249395",
+      "debt": 0,
+      "password": "p61vCt2t"
+    }
+  },
+  {
+    "name": "Trần Dũng",
+    "senderID": "100071700413137",
+    "data": {
+      "money": 8584.71,
+      "STK": "891157255",
+      "debt": 0,
+      "password": "Cz24zBWD"
+    }
+  }
+]

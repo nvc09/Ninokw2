@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API TNT</title>
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta property="og:title" content="TNT API" />
+    <meta property="og:url" content="" />
+  <link href="https://i.imgur.com/ytckc8q.jpeg" rel="icon">
+    <link href="https://i.imgur.com/ytckc8q.jpeg" rel="apple-touch-icon">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3623406530584630"
+     crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+  <style>
+    html {
+        height: 100%;
+    }
+
+    body {
+        height: 100%;
+        margin: 0px;
+    }
+
+    .center .description .clock {
+        color: #000000;
+        font-size: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .center {
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        margin: 0px;
+        width: 100%;
+        color: #222;
+        z-index: 1;
+        padding-top: 150px;
+    }
+
+    .center h1 {
+        font-size: 4rem;
+    }
+
+    .center .description {
+        font-family: monospace;
+        line-height: 22px;
+        font-size: 18px;
+        width: 370px;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 25px;
+    }
+
+    .center .description a {
+        text-decoration: none;
+        color: #111;
+        text-style: bold;
+    }
+
+    .select {
+        display: inline-block;
+        margin-right: 10px;
+        position: relative;
+    }
+
+    select {
+        transition: background-color 200ms ease;
+        font-size: 14px;
+        padding: 10px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        box-sizing: border-box;
+        border-radius: 3px;
+        font-family: monospace;
+        padding-right: 30px;
+        position: relative;
+        outline: 0px;
+        background: #fff;
+        cursor: pointer;
+    }
+
+    .select:after {
+        content: "▼";
+        padding: 14px 8px;
+        position: absolute;
+        right: 13px;
+        top: 0;
+        z-index: 1;
+        text-align: center;
+        width: 10%;
+        height: 100%;
+        pointer-events: none;
+        box-sizing: border-box;
+        font-size: 9px;
+    }
+
+    button {
+        transition: background-color 200ms ease;
+        font-size: 14px;
+        padding: 10px 12px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        box-sizing: border-box;
+        border-radius: 3px;
+        border: 1px solid #aaa;
+        background: #fff;
+        font-family: monospace;
+        cursor: pointer;
+        outline: 0px;
+    }
+
+    button:hover,
+    select:hover {
+        background-color: #eee;
+    }
+
+    .center .links {
+        padding-top: 10px;
+        font-family: monospace;
+        letter-spacing: 0.3px;
+        font-size: 14px;
+    }
+
+    .center .links a {
+        text-decoration: none;
+        margin-left: 0px;
+        margin-right: 100px;
+        color: #111;
+    }
+
+    .center .links a:hover {
+        text-decoration: underline;
+    }
+
+    .center .grid {
+      display: grid;
+      column-gap: 50px;
+    }
+    .center .grid hr {
+      border-top: 1px dashed gray;
+    }
+    .center .grid-item {
+      font-family: monospace;
+      letter-spacing: 0.3px;
+      font-size: 14px;
+      padding-bottom: 20px;
+    }
+    .center .grid-item a {
+      float: left;
+      text-decoration: none;
+      margin-left: 10px;
+      margin-right: 10px;
+      color: #111;
+    }
+
+    footer{
+        color: #000;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+    iframe {
+        margin-left: 14px;
+        margin-bottom: -5px;
+    }
+
+    @media (max-width: 900px) {
+        .center h1 {
+            font-size: 50px;
+        }
+        .center .links a,
+        .center .links iframe {
+            display: block;
+            margin: auto;
+            margin-bottom: 12px;
+        }
+        .divider {
+            display: none;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .center h1 {
+            font-size: 26px;
+        }
+        .center .description {
+            font-size: 14px;
+            width: 100%;
+            padding-left: 40px;
+            padding-right: 40px;
+            box-sizing: border-box;
+        }
+      }
+      table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+          .user-chat:empty {
+           background-color: transparent;
+           pointer-events: none;
+        }
+           .chat-container {
+            background-color: var(--primary);
+            color: #000;
+            padding: 10px;
+            border-radius: 5px;
+            height: 300px;
+            overflow-y: scroll;
+        }
+
+        .user-chat {
+            background-color: #dcf8c6;
+            color: #000;
+            padding: 5px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+            .bot-chat {
+            background-color: #ffffff;
+            color: #000;
+            padding: 5px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+    .live-chat-input {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      padding: 10px;
+    }
+
+    #inputText {
+      flex: 1;
+      border: none;
+      outline: none;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+
+    #submitBtn {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      outline: none;
+      padding: 8px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    #submitBtn:hover {
+      background-color: #45a049;
+    }
+    }
+    <style>
+        /* CSS để tạo màu cho chữ */
+        .rainbow-text {
+            background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        /* CSS Animation để tạo hiệu ứng chữ màu động */
+        @keyframes rainbow {
+            0% {
+                color: violet;
+            }
+            14% {
+                color: indigo;
+            }
+            28% {
+                color: blue;
+            }
+            42% {
+                color: green;
+            }
+            56% {
+                color: yellow;
+            }
+            70% {
+                color: orange;
+            }
+            84% {
+                color: red;
+            }
+            100% {
+                color: violet;
+            }
+        }
+
+        /* Áp dụng Animation cho chữ */
+        .animated-rainbow {
+            animation: rainbow 4s linear infinite;
+        }
+    body {
+        background-color: #f1d1bf; /* Mã màu hoặc tên màu */
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        height: 100vh; /* Để thấy rõ màu nền trên toàn bộ trang */
+    }
+    </style>
+  </style>
+</head>
+<body>
+      <div class="center">
+      <h1 class="rainbow-text animated-rainbow">TNTXTRICK API</h1>
+      <div class="description">
+        API TNTXTRICK
+        <div id="currentDateTime"></div>
+        <table>
+            <hr>
+
+        </table>
+        <h3 class="rainbow-text animated-rainbow">MENU API</h3>
+        <table>
+            <hr>
+            <tr>
+                <th class="rainbow-text animated-rainbow">Số</th>
+                <th class="rainbow-text animated-rainbow">Tên</th>
+                <th class="rainbow-text animated-rainbow">Phương pháp</th>
+                <th class="rainbow-text animated-rainbow">Action</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>SC</td>
+                <td>GET</td>
+                <td><a href="/sc/download?text=">[ ➠ ]</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>CapCut</td>
+                <td>GET</td>
+                <td><a href="/capcutdown?link=">[ ➠ ]</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Facebook</td>
+                <td>GET</td>
+                <td><a href="/fb/download?link=">[ ➠ ]</a></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Instagram</td>
+                <td>GET</td>
+                <td><a href="/instagramdown?link=">[ ➠ ]</a></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>TW</td>
+                <td>GET</td>
+                <td><a href="/tw/download?link=">[ ➠ ]</a></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Tiktok</td>
+                <td>GET</td>
+                <td><a href="/tiktok/downloadvideo?url=">[ ➠ ]</a></td>
+            </tr>
+          <tr>
+              <td>7</td>
+              <td>Youtube</td>
+              <td>GET</td>
+              <td><a href="/youtube/search?keywork=sontung">[ ➠ ]</a></td>
+          </tr>
+          <tr>
+              <td>8</td>
+              <td>Pinterest</td>
+              <td>GET</td>
+              <td><a href="/pinterest/down?link=">[ ➠ ]</a></td>
+          </tr>
+          <tr>
+              <td>9</td>
+              <td>Down All</td>
+              <td>GET</td>
+              <td><a href="/allinone?link=">[ ➠ ]</a></td>
+          </tr>
+          <tr>
+              <td>10</td>
+              <td>SC search</td>
+              <td>GET</td>
+              <td><a href="/sc/search?text=">[ ➠ ]</a></td>
+          </tr>
+          <tr>
+              <td>11</td>
+              <td>SC info</td>
+              <td>GET</td>
+              <td><a href="/sc/userinfo?text=">[ ➠ ]</a></td>
+          </tr>
+        </table>     
+        <br>
+        <hr>
+        <footer>
+            <p class="rainbow-text animated-rainbow">&#169; 2024 TNTXTRICK. Src được xây dựng bởi TNT.</p>
+        </footer>
+        </br>
+        </hr>
+    </div>
+  <script>
+    
+      function showCurrentDateTime() {
+        var currentDateTime = new Date();
+        var day = currentDateTime.getDate();
+        var month = currentDateTime.getMonth() + 1; // Lưu ý: Tháng bắt đầu từ 0
+        var year = currentDateTime.getFullYear();
+        var hours = currentDateTime.getHours();
+        var minutes = currentDateTime.getMinutes();
+        var seconds = currentDateTime.getSeconds();
+
+        // Format ngày, tháng, năm, giờ, phút và giây để có dạng 01, 02, ... 09
+        if (day < 10) {
+          day = '0' + day;
+        }
+        if (month < 10) {
+          month = '0' + month;
+        }
+        if (hours < 10) {
+          hours = '0' + hours;
+        }
+        if (minutes < 10) {
+          minutes = '0' + minutes;
+        }
+        if (seconds < 10) {
+          seconds = '0' + seconds;
+        }
+
+        var formattedDateTime = day + '/' + month + '/' + year + ' ' + hours + ':' + minutes + ':' + seconds;
+
+        // Hiển thị ngày và giờ trong phần tử có id là 'currentDateTime'
+        document.getElementById('currentDateTime').innerText = formattedDateTime;
+      }
+
+      // Gọi hàm showCurrentDateTime mỗi giây để cập nhật ngày và giờ
+      setInterval(showCurrentDateTime, 1000);
+       
+    
+</script>
+</body>
+</html>
